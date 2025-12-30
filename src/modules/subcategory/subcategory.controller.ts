@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { parseOrThrow } from "../../utils/zod";
 import { SubCategoryDTO, subCategorySchema, updateSubCategoryDataSchema, UpdateSubCategoryDTO } from "./subcategory.schema";
 import { SubCategoryService } from "./subcategory.service";
-import { EntryType } from "../../generated/prisma/enums";
+import { EntryType } from "@prisma/client";
 
 export class SubCategoryController {
     static async create(req: Request, res: Response){
