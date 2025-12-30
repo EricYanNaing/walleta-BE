@@ -5,6 +5,8 @@ import {
   updateTransactionSchema,
   TransactionSchemaDTO,
   UpdateTransactionDTO,
+  listTransactionDTO,
+  listTransactionSchema
 } from "./transaction.schema";
 import { TransactionService } from "./transaction.service";
 
@@ -26,8 +28,13 @@ export class TransactionController {
 
   static async list(req: Request, res: Response) {
     try {
-      const { userId, data } = req.body;
-      const result = await TransactionService.list(userId, data);
+      const dto = parseOrThrow<listTransactionDTO>(
+        listTransactionSchema,
+        req.query
+      );
+      const userId = req.params.userId;
+
+      const result = await TransactionService.list(userId, dto);
       return res.status(200).json(result);
     } catch (error) {
       console.error(error)

@@ -31,8 +31,8 @@ export class TransactionService {
     });
   }
 
-  static async list(userId: string, query: listTransactionDTO) {
-    const { page, pageSize, to, from, type, subCategoryId } = query;
+  static async list(userId: string, data: listTransactionDTO) {
+    const { page, pageSize, to, from, type, subCategoryId } = data;
 
     const where: Prisma.TransactionWhereInput = {
       userId,
