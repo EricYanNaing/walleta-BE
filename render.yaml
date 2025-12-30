@@ -1,7 +1,7 @@
 services:
   - type: web
     name: walleta-be
-    env: node
+    runtime: node
     buildCommand: npm install && npm run build && npx prisma migrate deploy
     startCommand: npm start
     envVars:
@@ -9,3 +9,4 @@ services:
         sync: false
       - key: NODE_ENV
         value: production
+    nodeVersion: 20
