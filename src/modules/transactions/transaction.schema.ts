@@ -6,6 +6,7 @@ export const transactionSchema = z.object({
   subCategoryId: z.cuid(),
   amount: z.union([z.number(), z.string()]).transform((v) => Number(v)),
   description: z.string().optional(),
+  date: z.coerce.date() ,
   type: entryTypeEnum
 });
 
