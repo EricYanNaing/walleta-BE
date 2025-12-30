@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: walleta-be
+    env: node
+    buildCommand: npm install && npm run build && npx prisma migrate deploy
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
