@@ -58,6 +58,8 @@ export class TransactionService {
       where.subCategoryId = subCategoryId;
     }
 
+    console.log("Prisma where clause:", JSON.stringify(where, null, 2));
+
     const skip = (page - 1) * pageSize;
     const take = pageSize;
 

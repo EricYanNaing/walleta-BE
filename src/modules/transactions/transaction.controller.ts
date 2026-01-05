@@ -33,7 +33,10 @@ export class TransactionController {
         req.query
       );
       const userId = (req as any).user.id;
+      console.log("Authenticated userId from JWT:", userId);
+      console.log("Query params:", req.query);
       const result = await TransactionService.list(userId, dto);
+      console.log("Result count:", result.items.length);
       return res.status(200).json(result);
     } catch (error) {
       console.error(error)
