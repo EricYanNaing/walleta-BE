@@ -6,8 +6,8 @@ export class SubCategoryService {
        return  prisma.subCategory.create({data});
     }
 
-    static async list(type? : 'EXPENSE' | 'INCOME'){
-        return prisma.subCategory.findMany({where : {type}})
+    static async list(userId: string, type? : 'EXPENSE' | 'INCOME'){
+        return prisma.subCategory.findMany({where : {userId, type}})
     }
     
     static async update(subId : string,data: SubCategoryDTO){

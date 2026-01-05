@@ -14,8 +14,9 @@ export class SubCategoryController {
 
     static async list(req:Request, res: Response){
         const type = req.query.type as EntryType;
-        const result = await SubCategoryService.list(type);
-
+        const userId = (req as any).user.id;
+        const result = await SubCategoryService.list(userId, type);
+        
         return res.status(200).json({data : result});
     }
 
