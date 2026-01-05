@@ -33,7 +33,6 @@ export class TransactionController {
         req.query
       );
       const userId = (req as any).user.id;
-
       const result = await TransactionService.list(userId, dto);
       return res.status(200).json(result);
     } catch (error) {
