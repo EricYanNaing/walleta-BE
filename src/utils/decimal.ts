@@ -1,8 +1,8 @@
-import { Decimal } from "@prisma/client/runtime/library";
+import { Prisma } from "@prisma/client";
 
 export function toNumber(d? : any) : number | null {
     if (d === null) return null;
-    if ( Decimal.isDecimal(d)) return parseFloat(d.toString());
+    if ( Prisma.Decimal.isDecimal(d)) return parseFloat(d.toString());
     if (typeof d === 'string') return parseFloat(d);
     if (typeof d === 'number') return d;
     return null;
