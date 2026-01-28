@@ -1,0 +1,17 @@
+id,userId,subCategoryId,amount,description,createdAt,updatedAt,type,date
+cmi2lxwar0003i7wauczyk08y,cmhx5zhvd0000i79usleqgtdp,cmhygtb0v0003i7a865rn3dhv,1000.00,test 1,2025-11-17 03:51:17.914,2025-11-17 03:53:57.12,EXPENSE,2025-12-30 10:11:14.963
+cmjsasj9a000pi79bpb1okibg,cmhx5zhvd0000i79usleqgtdp,cmjs9qolh000ni79b89ej6rp1,500.00,testing,2025-12-30 08:00:54.601,2025-12-30 08:00:54.601,EXPENSE,2025-12-30 10:11:14.963
+cmjsax99n000ri79b8z4y76rx,cmhx5zhvd0000i79usleqgtdp,cmjs9qbdk000li79bld63gfof,500.00,testing,2025-12-30 08:04:35.169,2025-12-30 08:04:35.169,INCOME,2025-12-30 10:11:14.963
+cmjsb0tjj000ti79bukt56dq7,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,1500.00,testing1,2025-12-30 08:07:21.178,2025-12-30 08:07:21.178,INCOME,2025-12-30 10:11:14.963
+cmjsb1tjz000vi79b5jmrcr5u,cmhx5zhvd0000i79usleqgtdp,cmjs9qolh000ni79b89ej6rp1,2500.00,testing1,2025-12-30 08:08:08.122,2025-12-30 08:08:08.122,EXPENSE,2025-12-30 10:11:14.963
+cmjseds0z0007i7ypxkxdycir,cmhx5zhvd0000i79usleqgtdp,cmhyguf4n0005i7a8zcftw05g,500.00,Fish,2025-12-30 09:41:24.862,2025-12-30 09:41:24.862,EXPENSE,2025-12-30 10:11:14.963
+cmjseen8j0009i7ypo8lrs9cb,cmhx5zhvd0000i79usleqgtdp,cmhygtb0v0003i7a865rn3dhv,2500.00,December Salary,2025-12-30 09:42:05.312,2025-12-30 09:42:05.312,INCOME,2025-12-30 10:11:14.963
+cmjsefb5d000bi7ypqwy3ee7r,cmhx5zhvd0000i79usleqgtdp,cmhygtb0v0003i7a865rn3dhv,2500.00,December Salary,2025-12-30 09:42:36.302,2025-12-30 09:42:36.302,INCOME,2025-12-30 10:11:14.963
+cmjsegt65000di7yp7q111hbp,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,2000.00,Fish,2025-12-30 09:43:46.019,2025-12-30 09:43:46.019,EXPENSE,2025-12-30 10:11:14.963
+cmjsehnme000fi7ypbju7wzn7,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,500.00,dinner,2025-12-30 09:44:25.776,2025-12-30 09:44:25.776,EXPENSE,2025-12-30 10:11:14.963
+cmjsf6h590001i7s4bfjcccc0,cmhx5zhvd0000i79usleqgtdp,cmjs9qbdk000li79bld63gfof,500.00,Test,2025-12-30 10:03:43.5,2025-12-30 10:03:43.5,INCOME,2025-12-30 10:11:14.963
+cmjsf9s5z0003i7s438sdxyut,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,200.00,Crafted Tote Bag,2025-12-30 10:06:18.034,2025-12-30 10:06:18.034,INCOME,2025-12-30 10:11:14.963
+cmjsfa4lw0005i7s4uc5d8tbm,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,500.00,Crafted Tote Bag,2025-12-30 10:06:34.162,2025-12-30 10:06:34.162,EXPENSE,2025-12-30 10:11:14.963
+cmjsfgzwp0001i79w2y897c05,cmhx5zhvd0000i79usleqgtdp,cmhygpkud0001i7a8v9dpu4j5,5000.00,Crafted Tote Bag,2025-12-30 10:11:54.417,2025-12-30 10:11:54.417,EXPENSE,2025-11-30 00:00:00
+cmjsfhz0x0003i79wjvn8qkze,cmhx5zhvd0000i79usleqgtdp,cmhygtb0v0003i7a865rn3dhv,5000.00,Crafted Tote Bag,2025-12-30 10:12:40.175,2025-12-30 10:12:40.175,INCOME,2025-11-30 00:00:00
+cmjsfn5le0005i79w1q3xleqc,cmhx5zhvd0000i79usleqgtdp,cmhygtb0v0003i7a865rn3dhv,500.00,Crafted Tote Bag,2025-12-30 10:16:41.966,2025-12-30 10:16:41.966,INCOME,2025-12-01 00:00:00

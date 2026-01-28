@@ -1,0 +1,4 @@
+id,username,email,passwordHash,totalAmount,limitAmount,createdAt,updatedAt
+cmhx5zhvd0000i79usleqgtdp,admin,admin@gmail.com,$2b$10$nJqRoZ6wL15uUb0FmzkvbuKRzwAnrdCBbZ3mRxFG2D4RVlvAlj6r.,51200.00,20000.00,2025-11-13 08:25:47.832,2025-12-30 10:16:42.193
+cmjs1twzq0000i7wy1a7xkjf1,pisi123,pisi@gmail.com,$2b$10$p2EljxEmghO7qrnwy.8TzuPN/MKbREFe8xkLiidDTVO4hfKYOq1Q2,null,null,2025-12-30 03:50:02.822,2025-12-30 03:50:02.822
+cmk0wjeyr0000gk1qc8f12ol4,zwe123,zwe@gmail.com,$2b$10$RhEsRzNg1sTCeCDi.UgHOOoBjhPME.WbUHsVTajU4XnXuW6AJN29m,null,null,2026-01-05 08:31:50.404,2026-01-05 08:31:50.404

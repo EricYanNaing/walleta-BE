@@ -1,0 +1,6 @@
+id,name,type,userId,createdAt,updatedAt
+cmhygpkud0001i7a8v9dpu4j5,Food,EXPENSE,cmhx5zhvd0000i79usleqgtdp,2025-11-14 06:13:47.077,2025-11-14 06:13:47.077
+cmhygtb0v0003i7a865rn3dhv,Salary,INCOME,cmhx5zhvd0000i79usleqgtdp,2025-11-14 06:16:40.938,2025-11-14 06:16:40.938
+cmhyguf4n0005i7a8zcftw05g,Dinner,EXPENSE,cmhx5zhvd0000i79usleqgtdp,2025-11-14 06:17:32.916,2025-11-14 06:36:32.905
+cmjs9qbdk000li79bld63gfof,Side Income,INCOME,cmhx5zhvd0000i79usleqgtdp,2025-12-30 07:31:11.729,2025-12-30 07:31:11.729
+cmjs9qolh000ni79b89ej6rp1,Transportation,EXPENSE,cmhx5zhvd0000i79usleqgtdp,2025-12-30 07:31:28.553,2025-12-30 07:31:28.553

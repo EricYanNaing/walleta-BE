@@ -12,7 +12,7 @@ export class TransactionService {
     serializeDecimalFields(data, ["amount"]);
 
     return prisma.$transaction(async (tx) => {
-      const created = await prisma.transaction.create({
+      const created = await tx.transaction.create({
         data,
         include: { subCategory: true },
       });
@@ -28,6 +28,8 @@ export class TransactionService {
         data: { totalAmount: { increment: updateTx } },
       });
       return updateTx;
+    }, {
+      timeout: 10000
     });
   }
 
