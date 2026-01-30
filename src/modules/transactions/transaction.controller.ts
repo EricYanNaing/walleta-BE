@@ -65,4 +65,33 @@ export class TransactionController {
       console.error(error)
     }
   }
+
+  static async getCashflowChart(req: Request, res: Response) {
+    try {
+      const userId = (req as any).user.id;
+      const period = (req.query.period as 'monthly' | 'yearly') || 'monthly';
+      const year = req.query.year ? parseInt(req.query.year as string) : undefined;
+      
+      const result = await TransactionService.getCashflowChart(userId, period, year);
+      return res.status(200).json(result);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Failed to fetch cashflow chart data' });
+    }
+  }
+
+  static async getBudgetBreakdown(req: Request, res: Response) {
+    try {
+      const userId = (req as any).user.id;
+      const period = (req.query.period as 'monthly' | 'yearly') || 'monthly';
+      const year = req.query.year ? parseInt(req.query.year as string) : undefined;
+      const month = req.query.month ? parseInt(req.query.month as string) : undefined;
+      
+      const result = await TransactionService.getBudgetBreakdown(userId, period, year, month);
+      return res.status(200).json(result);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Failed to fetch budget breakdown data' });
+    }
+  }
 }

@@ -27,3 +27,5 @@ router.get("/transactions", requireAuth, TransactionController.list);
 router.post("/transactions", requireAuth, TransactionController.create);
 router.put("/transactions", requireAuth, TransactionController.update);
 router.delete("/transactions", requireAuth, TransactionController.delete);
+router.get("/transactions/cashflow-chart", requireAuth, TransactionController.getCashflowChart);
+router.get("/transactions/budget-breakdown", requireAuth, TransactionController.getBudgetBreakdown);
