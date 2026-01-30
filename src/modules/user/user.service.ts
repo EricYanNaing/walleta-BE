@@ -1,6 +1,8 @@
 import { UpdateUserDataDTO } from './user.schema';
 import { prisma } from "../../db/client";
 import bcrypt from 'bcryptjs';
+import { toNumber } from '../../utils/decimal';
+import { Prisma } from '@prisma/client';
 
 export class UserService {
     static async getUserInfo(userId : string){
@@ -36,5 +38,47 @@ export class UserService {
         });
 
         return user;
+    }
+
+    static async getTotalBalance(userId: string) {
+        if (!userId) throw Object.assign(new Error("Invalid Credentials."), { status: 400 });
+
+        const user = await prisma.user.findUnique({
+            where: { id: userId },
+            select: { totalAmount: true }
+        });
+
+        if (!user) throw Object.assign(new Error("User not found."), { status: 404 });
+
+        // Aggregate income transactions
+        const incomeResult = await prisma.transaction.aggregate({
+            where: {
+                userId,
+                type: 'INCOME'
+            },
+            _sum: {
+                amount: true
+            }
+        });
+
+        // Aggregate expense transactions
+        const expenseResult = await prisma.transaction.aggregate({
+            where: {
+                userId,
+                type: 'EXPENSE'
+            },
+            _sum: {
+                amount: true
+            }
+        });
+
+        const totalIncome = toNumber(incomeResult._sum.amount) ?? 0;
+        const totalExpense = toNumber(expenseResult._sum.amount) ?? 0;
+
+        return {
+            totalBalance: totalIncome - totalExpense,
+            totalIncome,
+            totalExpense
+        };
     }
 }

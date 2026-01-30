@@ -18,4 +18,11 @@ export class UserController{
 
         res.status(201).json(result);
     }
+
+    static async getTotalBalance(req: Request, res: Response) {
+        const { userId } = (req as any).body;
+        const result = await UserService.getTotalBalance(userId);
+
+        res.json(result);
+    }
 }

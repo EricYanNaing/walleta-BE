@@ -15,6 +15,7 @@ router.get("/auth/:userId", requireAuth, AuthController.getUserInfo);
 // user routers
 router.get("/user/", requireAuth, UserController.getUserInfo);
 router.patch("/user/", requireAuth, UserController.updateUserInfo);
+router.get("/user/balance", requireAuth, UserController.getTotalBalance);
 
 // subCategory routers
 router.get("/sub-category", requireAuth, SubCategoryController.list);
