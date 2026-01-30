@@ -20,7 +20,7 @@ export class UserController{
     }
 
     static async getTotalBalance(req: Request, res: Response) {
-        const { userId } = (req as any).body;
+        const userId = (req as any).user?.id;
         const result = await UserService.getTotalBalance(userId);
 
         res.json(result);
