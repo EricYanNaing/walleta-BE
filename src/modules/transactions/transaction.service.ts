@@ -268,7 +268,13 @@ export class TransactionService {
     }
   }
 
-  static async getBudgetBreakdown(userId: string, period: 'monthly' | 'yearly' = 'monthly', year?: number, month?: number) {
+  static async getBudgetBreakdown(
+    userId: string, 
+    period: 'monthly' | 'yearly' = 'monthly', 
+    type: 'INCOME' | 'EXPENSE' = 'EXPENSE',
+    year?: number, 
+    month?: number
+  ) {
     const currentDate = new Date();
     const targetYear = year || currentDate.getFullYear();
 
@@ -299,25 +305,30 @@ export class TransactionService {
       }
     });
 
-    const expenseTransactions = transactions.filter(t => t.subCategory.type === 'EXPENSE');
+    // Filter by transaction type (INCOME or EXPENSE)
+    const filteredTransactions = transactions.filter(t => t.subCategory.type === type);
     
     const categoryMap = new Map<string, number>();
-    let totalExpense = 0;
+    let total = 0;
 
-    expenseTransactions.forEach(transaction => {
+    filteredTransactions.forEach(transaction => {
       const categoryName = transaction.subCategory.name;
       const amount = parseFloat(transaction.amount.toString());
       
       categoryMap.set(categoryName, (categoryMap.get(categoryName) || 0) + amount);
-      totalExpense += amount;
+      total += amount;
     });
 
-    const data = Array.from(categoryMap.entries()).map(([category, total]) => ({
+    const data = Array.from(categoryMap.entries()).map(([category, categoryTotal]) => ({
       category,
-      total: Math.round(total * 100) / 100,
-      percentage: totalExpense > 0 ? Math.round((total / totalExpense) * 10000) / 100 : 0
+      total: Math.round(categoryTotal * 100) / 100,
+      percentage: total > 0 ? Math.round((categoryTotal / total) * 10000) / 100 : 0
     }));
 
-    return { data };
+    return { 
+      data,
+      type,
+      total: Math.round(total * 100) / 100
+    };
   }
 }

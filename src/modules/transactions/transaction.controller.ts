@@ -84,10 +84,16 @@ export class TransactionController {
     try {
       const userId = (req as any).user.id;
       const period = (req.query.period as 'monthly' | 'yearly') || 'monthly';
+      const type = (req.query.type as 'INCOME' | 'EXPENSE') || 'EXPENSE';
       const year = req.query.year ? parseInt(req.query.year as string) : undefined;
       const month = req.query.month ? parseInt(req.query.month as string) : undefined;
       
-      const result = await TransactionService.getBudgetBreakdown(userId, period, year, month);
+      // Validate type parameter
+      if (type !== 'INCOME' && type !== 'EXPENSE') {
+        return res.status(400).json({ error: 'Type must be either INCOME or EXPENSE' });
+      }
+      
+      const result = await TransactionService.getBudgetBreakdown(userId, period, type, year, month);
       return res.status(200).json(result);
     } catch (error) {
       console.error(error);
