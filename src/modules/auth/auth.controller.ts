@@ -2,7 +2,6 @@ import { AuthService } from "./auth.service";
 import { Request, Response } from "express";
 import { parseOrThrow } from "../../utils/zod";
 import { registerSchema, loginSchema, RegisterDTO, LoginDTO } from "./auth.schema";
-
 export class AuthController { 
     static async register(req:Request,res:Response){
         const dto = parseOrThrow<RegisterDTO>(registerSchema,req.body);
