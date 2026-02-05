@@ -42,9 +42,13 @@ export const listTransactionSchema = z
 
 export type listTransactionDTO = z.infer<typeof listTransactionSchema>;
 
-export const updateTransactionSchema = transactionSchema.extend({
+export const updateTransactionSchema = z.object({
   id: z.cuid(),
-  type : entryTypeEnum
+  userId: z.cuid().optional(),
+  subCategoryId: z.cuid().optional(),
+  amount: z.union([z.number(), z.string()]).transform((v) => Number(v)).optional(),
+  description: z.string().optional(),
+  date: z.coerce.date().optional()
 });
 
 export type UpdateTransactionDTO = z.infer<typeof updateTransactionSchema>;

@@ -86,7 +86,7 @@ export class TransactionService {
   }
 
   static async update(data: UpdateTransactionDTO) {
-  const { id, subCategoryId, amount, description } = data;
+  const { id, subCategoryId, amount, description, date } = data;
 
   return prisma.$transaction(async (tx) => {
     const existing = await tx.transaction.findUnique({
@@ -143,6 +143,7 @@ export class TransactionService {
         amount: newAmount,
         description:
           description !== undefined ? description : existing.description,
+        date: date !== undefined ? date : existing.date,
       },
       include: { subCategory: true },
     });

@@ -42,10 +42,12 @@ export class TransactionController {
 
   static async update(req: Request, res: Response) {
     try {
+      console.log("Update request body:", req.body);
       const dto = parseOrThrow<UpdateTransactionDTO>(
         updateTransactionSchema,
         req.body
       );
+      console.log("Parsed DTO:", dto);
 
       const result = await TransactionService.update(dto);
 
