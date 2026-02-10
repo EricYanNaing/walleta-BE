@@ -45,12 +45,12 @@ export class AuthService {
     });
 
     if (!user)
-      throw Object.assign(new Error("Invalid Credentials."), { status: 401 });
+      throw Object.assign(new Error("Invalid Credentials."), { status: 400 });
 
     const ok = await bcrypt.compare(password, user.passwordHash);
 
     if (!ok)
-      throw Object.assign(new Error("Invalid Credentials."), { status: 401 });
+      throw Object.assign(new Error("Invalid Credentials."), { status: 400 });
 
     return this.sign(user.id, user.email);
   }
